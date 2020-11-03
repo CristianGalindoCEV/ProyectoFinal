@@ -53,7 +53,7 @@ public class InputManager : MonoBehaviour
             EspadaItem = false;
          }
         //Salto
-        player.SetAxis(Input.GetAxis("Horizontal"));
+        //player.SetAxis(Input.GetAxis("Horizontal"));
 
         if (Input.GetButtonDown("Jump"))
             player.Jump();

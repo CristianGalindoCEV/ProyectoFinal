@@ -5,44 +5,36 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : PhysicsCollision
 {
-    private Rigidbody rb;
-    public float speed;
-    private float axisX;
-    private Vector2 m_velocity;
+    private Rigidbody m_rb;
+    [SerializeField] private float m_velocity = 10f;
+    private Vector3 m_inputvector;
     public float jumpForce = 5;
-    // public Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        m_rb = GetComponent<Rigidbody>();
 
     }
 
-    // Update is called once per frame
-    protected override void FixedUpdate()
+    private void Update()
     {
-        base.FixedUpdate();
-
-        m_velocity = rb.velocity;
-        m_velocity.x = speed * axisX;
-        if (touchWall)
-            m_velocity.x = 0;
-
-        rb.velocity = m_velocity;
-
+        m_inputvector = new Vector3(Input.GetAxisRaw("Horizontal") * m_velocity, m_rb.velocity.y, Input.GetAxisRaw("Vertical") * m_velocity);
+        transform.LookAt(transform.position + new Vector3(m_inputvector.x, 0, m_inputvector.z));
+       
     }
-
-    public void SetAxis(float x)
+   
+    private void FixedUpdate()
     {
-        axisX = x;
+        m_rb.velocity = m_inputvector;
     }
+
 
     public void Jump()
     {
         if (!isGrounded)
             return;
 
-        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        m_rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 }

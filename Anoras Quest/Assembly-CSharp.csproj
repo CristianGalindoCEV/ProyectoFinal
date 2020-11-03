@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\Enemigos\MiniBoss\MiniBossScript.cs" />
     <Compile Include="Assets\Scripts\Enemigos\MiniBoss\SpikeScript.cs" />
     <Compile Include="Assets\Scripts\Enemigos\ProjectileScript.cs" />
+    <Compile Include="Assets\Scripts\GameMaster.cs" />
     <Compile Include="Assets\Scripts\HUD &amp; Cam\BarraHP.cs" />
     <Compile Include="Assets\Scripts\HUD &amp; Cam\CursorOculto.cs" />
     <Compile Include="Assets\Scripts\HUD &amp; Cam\InputManager.cs" />
@@ -82,10 +83,13 @@
     <Compile Include="Assets\Scripts\Plataformas\Plataforma_Movil.cs" />
     <Compile Include="Assets\Scripts\Plataformas\PlatformPlayerDetection.cs" />
     <Compile Include="Assets\Scripts\Plataformas\SpacePoint.cs" />
-    <Compile Include="Assets\Scripts\Player\GameMaster.cs" />
     <Compile Include="Assets\Scripts\Player\PhysicsCollision.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Player\Scrip player malo\Player_Behaviour.cs" />
+    <Compile Include="Assets\Scripts\Props\Armas\Bauculo.cs" />
+    <Compile Include="Assets\Scripts\Props\Armas\BauculoItem.cs" />
+    <Compile Include="Assets\Scripts\Props\Armas\Bullet.cs" />
+    <Compile Include="Assets\Scripts\Props\Armas\FireTemplate.cs" />
     <Compile Include="Assets\Scripts\Props\HealItem.cs" />
     <None Include="Assets\Assets pa borrar\Fantasy Forest Environment Free Sample\StandardNoCulling.shader" />
     <Reference Include="UnityEngine">
