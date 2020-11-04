@@ -684,6 +684,12 @@
     <Reference Include="UnityEditor.UI">
       <HintPath>E:/CEV/Carpeta General Proyecto Final/ProyectoFinal/Anoras Quest/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>E:/CEV/Carpeta General Proyecto Final/ProyectoFinal/Anoras Quest/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>E:/CEV/Carpeta General Proyecto Final/ProyectoFinal/Anoras Quest/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup></ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
