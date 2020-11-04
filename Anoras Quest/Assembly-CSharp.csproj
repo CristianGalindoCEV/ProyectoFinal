@@ -76,6 +76,7 @@
     <Compile Include="Assets\Scripts\Enemigos\MiniBoss\SpikeScript.cs" />
     <Compile Include="Assets\Scripts\Enemigos\ProjectileScript.cs" />
     <Compile Include="Assets\Scripts\HUD &amp; Cam\BarraHP.cs" />
+    <Compile Include="Assets\Scripts\HUD &amp; Cam\CanvasManager.cs" />
     <Compile Include="Assets\Scripts\HUD &amp; Cam\CursorOculto.cs" />
     <Compile Include="Assets\Scripts\HUD &amp; Cam\InputManager.cs" />
     <Compile Include="Assets\Scripts\HUD &amp; Cam\MyCamera.cs" />
