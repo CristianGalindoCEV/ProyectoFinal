@@ -457,7 +457,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedChase: 5.5
-  Damage: 10
+  damage: 0
+  enemyhealth: {fileID: 0}
   rangeDistanceMin: 6
   rangeDistanceMax: 8
   player: {fileID: 0}

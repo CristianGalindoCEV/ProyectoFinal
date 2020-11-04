@@ -8,8 +8,9 @@ public class EnemyMeele : MonoBehaviour
 
     //Player
     [SerializeField] private float speedChase = 5.5f;
-    public int Damage = 10;
+    public float damage;
     private float speed = 6f;
+    public EnemyHealth enemyhealth;
 
     //Rango
     [SerializeField] float rangeDistanceMin;
@@ -55,12 +56,19 @@ public class EnemyMeele : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            StartCoroutine(Ataco());
+            StartCoroutine(Atack());
+        }
+
+        if (other.tag == "Bullet")
+        {
+            damage = 10f;
+            enemyhealth.healtbarUI.SetActive(true);
+            StartCoroutine(TakeDamage());
         }
     }
 
     //Ataque
-        IEnumerator Ataco()
+        IEnumerator Atack()
     {
         speedChase = 0f;
         //Animacion
@@ -68,6 +76,10 @@ public class EnemyMeele : MonoBehaviour
         speedChase = 5.5f;
     }
 
-
+    IEnumerator TakeDamage()
+    {
+        enemyhealth.health = enemyhealth.health - damage;
+        yield return new WaitForSeconds(1.0f);
+    }
 }
 

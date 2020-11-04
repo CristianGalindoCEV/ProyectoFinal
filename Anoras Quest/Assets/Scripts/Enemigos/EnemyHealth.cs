@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyHealth : MonoBehaviour
+public class EnemyHealth: MonoBehaviour
 {
     public float health;
     public float maxHealth;
@@ -17,11 +17,13 @@ public class EnemyHealth : MonoBehaviour
     {
         health = maxHealth;
         slider.value = CalculateHealth();
+        healtbarUI.SetActive(false);
     }
 
 
     void Update()
     {
+
         slider.value = CalculateHealth();
 
         if (health < maxHealth)
