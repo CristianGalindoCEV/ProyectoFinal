@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\CanvasAndButons\BotonSonido.cs" />
     <Compile Include="Assets\Scripts\CanvasAndButons\FadeInFadeOut.cs" />
     <Compile Include="Assets\Scripts\CanvasAndButons\MenuInGame.cs" />
+    <Compile Include="Assets\Scripts\Enemigos\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\Enemigos\EnemyMeele.cs" />
     <Compile Include="Assets\Scripts\Enemigos\EnemyRange.cs" />
     <Compile Include="Assets\Scripts\Enemigos\MiniBoss\BossBarrierScript.cs" />
