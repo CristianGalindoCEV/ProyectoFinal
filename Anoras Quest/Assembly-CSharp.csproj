@@ -92,6 +92,7 @@
     <Compile Include="Assets\Scripts\Props\Armas\FireTemplate.cs" />
     <Compile Include="Assets\Scripts\Props\HealItem.cs" />
     <None Include="Assets\Assets pa borrar\Fantasy Forest Environment Free Sample\StandardNoCulling.shader" />
+    <None Include="Assets\Assets pa borrar\Fantasy Skybox FREE\Readme.txt" />
     <Reference Include="UnityEngine">
       <HintPath>D:/Cosas Unity/2019.4.11f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
