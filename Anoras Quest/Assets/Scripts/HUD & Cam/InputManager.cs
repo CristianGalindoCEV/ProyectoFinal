@@ -21,6 +21,7 @@ public class InputManager : MonoBehaviour
         Bauculo.SetActive(false);
         player = FindObjectOfType<PlayerController>();
         m_menuon = false;
+        ingamemenu.SetActive(false);
     }
 
     // Update is called once per frame
