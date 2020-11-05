@@ -30,6 +30,10 @@ public class InputManager : MonoBehaviour
         player = FindObjectOfType<PlayerController>();
         menuon = false;
         ingamemenu.SetActive(false);
+
+        //Cursor
+        Cursor.visible = (false);
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -87,6 +91,18 @@ public class InputManager : MonoBehaviour
                 ingamemenu.SetActive(false);
                 menuon = false;
             }
+        }
+
+        //Cursor
+        if (menuon == true)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = (true);
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = (false);
         }
         
     }
