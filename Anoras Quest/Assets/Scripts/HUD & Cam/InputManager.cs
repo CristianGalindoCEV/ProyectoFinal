@@ -11,7 +11,7 @@ public class InputManager : MonoBehaviour
 
     public bool BauculoItem = false;
     public bool EspadaItem = true;
-    [SerializeField] private bool m_menuon;
+    public bool menuon;
     public GameMaster gamemaster;
 
     private PlayerController player;
@@ -20,7 +20,7 @@ public class InputManager : MonoBehaviour
     {
         Bauculo.SetActive(false);
         player = FindObjectOfType<PlayerController>();
-        m_menuon = false;
+        menuon = false;
         ingamemenu.SetActive(false);
     }
 
@@ -71,14 +71,14 @@ public class InputManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if( m_menuon == false)
+            if( menuon == false)
             {
                 ingamemenu.SetActive(true);
-                m_menuon = true;
+                menuon = true;
             }else
             {
                 ingamemenu.SetActive(false);
-                m_menuon = false;
+                menuon = false;
             }
         }
 
