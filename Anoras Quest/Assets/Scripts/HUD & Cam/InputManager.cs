@@ -4,17 +4,25 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
+   //Armas
     [SerializeField] private GameObject Bauculo;
     [SerializeField] private GameObject Espada;
-    public GameObject hud;
-    public GameObject ingamemenu;
-
     public bool BauculoItem = false;
     public bool EspadaItem = true;
+   
+    //HUD
+    public GameObject hud;
+    public GameObject ingamemenu;
     public bool menuon;
     public GameMaster gamemaster;
 
+    //Player
     private PlayerController player;
+
+    //Cursor
+    private bool m_islocked;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,7 +76,6 @@ public class InputManager : MonoBehaviour
             player.Jump();
 
         //Canvas
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if( menuon == false)
@@ -81,7 +88,7 @@ public class InputManager : MonoBehaviour
                 menuon = false;
             }
         }
-
+        
     }
 
 
