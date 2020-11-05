@@ -72,6 +72,7 @@ public class EnemyMeele : MonoBehaviour
     {
         speedChase = 0f;
         //Animacion
+        //Sonido = FindObjectOfType<AudioManager>().Play("nombredelaudio");
         yield return new WaitForSeconds(2.0f);
         speedChase = 5.5f;
     }
