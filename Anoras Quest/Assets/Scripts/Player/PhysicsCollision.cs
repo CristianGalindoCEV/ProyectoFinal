@@ -56,7 +56,7 @@ public class PhysicsCollision : MonoBehaviour
             ray = new Ray(pos, Vector3.down);
             hit = new RaycastHit();
 
-            isGrounded = Physics.Raycast(ray, out hit, 1.1f, groundLayer);
+            isGrounded = Physics.Raycast(ray, out hit, 1.5f, groundLayer);
 
             if (isGrounded)
             {
