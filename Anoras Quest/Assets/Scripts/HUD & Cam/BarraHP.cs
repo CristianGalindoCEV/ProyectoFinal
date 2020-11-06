@@ -16,6 +16,7 @@ public class BarraHP : MonoBehaviour
     public void TakeDamage(float amount)
     {
         gamemaster.hp -= amount;
+        Debug.Log("Editobarra");
         healt.fillAmount = gamemaster.hp / gamemaster.maxhp;
 
     }

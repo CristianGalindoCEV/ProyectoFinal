@@ -152,6 +152,13 @@ MonoBehaviour:
   gravity: 70
   m_fallVelocity: 0
   m_jumpForce: 20
+  healthbar: {fileID: 0}
+  gamemaster: {fileID: 0}
+  m_shadowGO: {fileID: 0}
+  m_shadowTransform: {fileID: 0}
+  m_groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1344188101613610524
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,7 +186,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1344188101613610524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.653, y: 0.00000011921, z: 0}
+  m_LocalPosition: {x: 0.653, y: 0.246, z: 0}
   m_LocalScale: {x: 0.182, y: 2.1880307, z: 0.182}
   m_Children: []
   m_Father: {fileID: 1344188100929735338}
@@ -272,7 +279,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1344188101819515890}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.657, y: 0.00000011921, z: 0}
+  m_LocalPosition: {x: 0.657, y: 0.283, z: 0}
   m_LocalScale: {x: 0.28034, y: 1.171681, z: 0.28034}
   m_Children: []
   m_Father: {fileID: 1344188100929735338}

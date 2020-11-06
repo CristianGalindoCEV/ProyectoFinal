@@ -167,11 +167,10 @@ public class PlayerController : PhysicsCollision
         iamdead = true;
         //Indicamos al score que hemos perdido HP
         gamemaster.hp = gamemaster.hp - damage;
-
         healthbar.SendMessage("TakeDamage", damage);
         //(Que el player sea empujado hacia atras)
 
-        if (gamemaster.hp == 0)
+        if (gamemaster.hp <= 0)
         {
             SceneManager.LoadScene("GameOver");
         }
