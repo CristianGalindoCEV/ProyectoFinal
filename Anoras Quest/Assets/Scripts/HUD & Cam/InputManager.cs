@@ -13,6 +13,7 @@ public class InputManager : MonoBehaviour
     //HUD
     public GameObject hud;
     public GameObject ingamemenu;
+    public GameObject mirilla;
     public bool menuon;
     public GameMaster gamemaster;
 
@@ -66,12 +67,14 @@ public class InputManager : MonoBehaviour
         {
             EspadaItem = true;
             BauculoItem = false;
+            mirilla.SetActive(false);
         }
         
         if (Input.GetKey("2") && gamemaster.unlocked == true)
          {
             BauculoItem = true;
             EspadaItem = false;
+            mirilla.SetActive(true);
          }
         //Salto
         //player.SetAxis(Input.GetAxis("Horizontal"));
