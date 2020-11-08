@@ -11,7 +11,7 @@ public class BarraHP : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gamemaster.hp = gamemaster.maxhp;
+        //gamemaster.hp = gamemaster.maxhp;
     }
     public void TakeDamage(float amount)
     {
