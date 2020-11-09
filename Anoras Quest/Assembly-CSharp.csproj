@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Audio\Sound.cs" />
     <Compile Include="Assets\Scripts\CanvasAndButons\Boton.cs" />
     <Compile Include="Assets\Scripts\CanvasAndButons\BotonSonido.cs" />
+    <Compile Include="Assets\Scripts\CanvasAndButons\Canvas Main Menu.cs" />
     <Compile Include="Assets\Scripts\CanvasAndButons\FadeInFadeOut.cs" />
     <Compile Include="Assets\Scripts\CanvasAndButons\MenuInGame.cs" />
     <Compile Include="Assets\Scripts\CanvasAndButons\MenuManager.cs" />
