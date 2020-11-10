@@ -16,6 +16,7 @@ public class MenuManager : MonoBehaviour
     public GameObject panelgraphics;
     public TMP_Dropdown resolutionDropdown;
     public InputManager inputmanager;
+    public PauseManager pausemanager;
     Resolution[] resolutions;
 
     void Start()
@@ -87,11 +88,12 @@ public class MenuManager : MonoBehaviour
     {
         inputmanager.pausemenu.SetActive(false);
         inputmanager.menuon = false;
+        pausemanager.Resume();
     }
 
     public void PulsaOptions()
     {
-        optionsmenu.SetActive(false);
+        optionsmenu.SetActive(true);
         inputmanager.pausemenu.SetActive(false);
     }
 
@@ -99,6 +101,7 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+   
     //Botones del menu Ingame
     public void PulsaResolution()
     {

@@ -138,6 +138,7 @@ public class PlayerController : PhysicsCollision
         m_rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 
+    //Triggers
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "EnemyMele")

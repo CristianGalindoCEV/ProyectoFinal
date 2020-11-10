@@ -16,6 +16,7 @@ public class InputManager : MonoBehaviour
     public GameObject mirilla;
     public bool menuon;
     public GameMaster gamemaster;
+    public MenuManager menumanager;
 
     //Player
     private PlayerController player;
@@ -91,7 +92,12 @@ public class InputManager : MonoBehaviour
             {
                 pausemenu.SetActive(true);
                 menuon = true;
-            }else
+                menumanager.panelgraphics.SetActive(false);
+                menumanager.panelresolution.SetActive(false);
+                menumanager.panelsound.SetActive(false);
+                menumanager.optionsmenu.SetActive(false);
+            }
+            else
             {
                 pausemenu.SetActive(false);
                 menuon = false;
