@@ -52,6 +52,7 @@ public class InputManager : MonoBehaviour
         {
             EspadaItem = true;
             BauculoItem = false;
+            ChangeWeapon();
             mirilla.SetActive(false);
         }
         
@@ -59,6 +60,7 @@ public class InputManager : MonoBehaviour
          {
             BauculoItem = true;
             EspadaItem = false;
+            ChangeWeapon();
             mirilla.SetActive(true);
          }
 

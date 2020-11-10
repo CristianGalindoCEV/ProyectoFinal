@@ -28,6 +28,7 @@ public class BauculoItem : MonoBehaviour
             StartCoroutine(unlocked());
         }
     }
+
     IEnumerator unlocked()
     {
         //Particula

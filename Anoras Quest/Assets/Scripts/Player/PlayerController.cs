@@ -26,12 +26,23 @@ public class PlayerController : PhysicsCollision
     private Vector3 camRight;
 
     //Gravedad y salto
-    [SerializeField] private float m_jumpTime = 0.5f;
+    [SerializeField] private float f_jumpTime = 0.5f;
     [SerializeField] private float m_gravityForce = 3f;
     [SerializeField] private float gravity = 70f;
     public float m_fallVelocity;
-    [SerializeField] private float m_jumpForce = 20f;
+    [SerializeField] private float f_jumpForce = 20f;
     private float m_internGravity;
+
+    /*
+    private float f_jumpButtonPressTime;
+    public bool jumpMinAirTime;
+    public bool jumpMaxAirTime;
+    private bool b_jumpButtonReleased;
+    private bool b_jumping;
+    private float f_jumpReleaseForce;
+    private float f_jumpDefaultForce;
+    */
+
 
     //Canvas
     public GameObject healthbar;
@@ -71,6 +82,13 @@ public class PlayerController : PhysicsCollision
         movePlayer.y = m_rigidbody.velocity.y;
 
         m_rigidbody.velocity = movePlayer;
+
+       /* if(f_jumpButtonPressTime != 0 && Time.time - f_jumpButtonPressTime >= jumpMinAirTime &&
+            Time.time -) f_jumpButtonPressTime <= jumpMaxAirTime && b_jumpButtonReleased || Time.time - f_jumpButtonPressTime && !m_checker.isGrounded)
+        {
+            b_jumpButtonReleased = false;
+            JumpRelase();
+        }*/
 
     }
 
@@ -138,28 +156,49 @@ public class PlayerController : PhysicsCollision
         m_rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 
-    //Triggers
-    private void OnTriggerEnter(Collider other)
+    /*private void Jump (float force)
     {
-        if (other.tag == "EnemyMele")
-        {
-            damage = 15f;
-            StartCoroutine(Golpe());
-        }
-        if (other.tag == "Finish")
-        {
-            SceneManager.LoadScene("GameOver");
-        }
-        if (other.tag == "portal")
-        {
-            SceneManager.LoadScene("EscenaMiniBoss");
-        }
-        if (other.tag == "ItemVida")
-        {
-            heal = 10f;
-            StartCoroutine(Healty());
-        }
+
+        f_jumpForce = force;
+        m_rigidbody.velocity = Vector3.zero;
+        b_jumping = true;
     }
+
+    public void JumpRelased()
+    {
+        if (b_jumpButtonReleased)
+            return;
+        Debug.Log("Released");
+        Jump(-f_jumpReleaseForce);
+    }
+
+    public void JumpStart()
+    {
+        if (!m_checker.isGrounded)
+        {
+            return;
+        }
+
+        f_jumpButtonPressTime = Time.time;
+        b_jumpButtonReleased = false;
+
+        Jump(f_jumpDefaultForce);
+    }*/
+    
+    //HealItem
+    public void HealItem()
+    {
+        heal = 10f;
+        StartCoroutine(Healty());
+    }
+    //EnemyMele
+    public void Enemymele()
+    {
+        damage = 15f;
+        StartCoroutine(Golpe());
+    }
+
+
 
     //Corutina de golpe
     IEnumerator Golpe()
@@ -169,7 +208,7 @@ public class PlayerController : PhysicsCollision
         //Indicamos al score que hemos perdido HP
         gamemaster.hp = gamemaster.hp - damage;
         healthbar.SendMessage("TakeDamage", damage);
-        //(Que el player sea empujado hacia atras)
+        //Player pushed
         m_rigidbody.AddForce(-transform.forward * 100f, ForceMode.Impulse);
         m_rigidbody.AddForce(transform.up * 5f, ForceMode.Impulse);
 
@@ -197,7 +236,7 @@ public class PlayerController : PhysicsCollision
         //Particulas
     }
 
-    //Sistema de raycast para la sombra
+    //Shadow Raycast
     void RaycastGround()
     {
         Ray ray = new Ray(m_transform.position, Vector3.down);

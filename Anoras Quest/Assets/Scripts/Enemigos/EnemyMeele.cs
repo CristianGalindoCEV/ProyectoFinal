@@ -11,6 +11,7 @@ public class EnemyMeele : MonoBehaviour
     public float damage;
     private float speed = 6f;
     public EnemyHealth enemyhealth;
+    public PlayerController playerController;
 
     //Rango
     [SerializeField] float rangeDistanceMin;
@@ -54,10 +55,7 @@ public class EnemyMeele : MonoBehaviour
     //Trigers
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
-        {
-            StartCoroutine(Atack());
-        }
+        
 
         if (other.tag == "Bullet")
         {
@@ -66,11 +64,20 @@ public class EnemyMeele : MonoBehaviour
             StartCoroutine(TakeDamage());
         }
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "Player")
+        {
+            StartCoroutine(Atack());
+            Debug.Log("attack");
+        }
+    }
 
     //Ataque
-        IEnumerator Atack()
+    IEnumerator Atack()
     {
         speedChase = 0f;
+        playerController.Enemymele();
         //Animacion
         //Sonido = FindObjectOfType<AudioManager>().Play("nombredelaudio");
         yield return new WaitForSeconds(2.0f);
