@@ -5,24 +5,39 @@ using UnityEngine.SceneManagement;
 
 public class Bauculo : MonoBehaviour
 {
-    [SerializeField] private FireTemplate bullet;
-    [SerializeField] private GameObject mano;
+    public GameObject firepoint;
+    public List<GameObject> vfx = new List<GameObject>();
+    public Hand hand;
 
-    // Start is called before the first frame update
+    public GameObject effecttospawn;
+
+   
     void Start()
+    {
+        effecttospawn = vfx[0];
+    }
+
+    void Update()
     {
         
     }
 
-    public void Fire()
+    public void SpawnVFX()
     {
-        // Debug.Log("Fire");
+        GameObject vfx;
 
-        // Instanciar una pelota
-        FireTemplate pelota = Instantiate(bullet, mano.transform.position, mano.transform.rotation) as FireTemplate;
-
-        // Ponerla en la posición del player
-        // Dispararla
-        pelota.Fire();
+        if (firepoint != null)
+        {
+            vfx = Instantiate(effecttospawn, firepoint.transform.position, Quaternion.identity);
+            if (hand != null)
+            {
+                vfx.transform.localRotation = hand.GetRotation();
+            }
+        }
+        else
+        {
+            Debug.Log("No FIre Point");
+        }
     }
+
 }

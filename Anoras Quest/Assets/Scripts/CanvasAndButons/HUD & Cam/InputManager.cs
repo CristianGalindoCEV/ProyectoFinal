@@ -5,10 +5,12 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
    //Armas
-    [SerializeField] private GameObject Bauculo;
+    [SerializeField] private GameObject Gun;
     [SerializeField] private GameObject Espada;
     public bool BauculoItem = false;
     public bool EspadaItem = true;
+    public Bauculo bauculospawn;
+    private float f_timetospawn = 0;
    
     //HUD
     public GameObject hud;
@@ -28,7 +30,7 @@ public class InputManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Bauculo.SetActive(false);
+        Gun.SetActive(false);
         player = FindObjectOfType<PlayerController>();
         
         //Canvas
@@ -47,7 +49,7 @@ public class InputManager : MonoBehaviour
         if (BauculoItem == true)
         {
             Espada.SetActive(false);
-            Bauculo.SetActive(true);
+            Gun.SetActive(true);
             EspadaItem = (false);
             if (Input.GetButtonDown("Fire1"))
             {
@@ -58,7 +60,7 @@ public class InputManager : MonoBehaviour
         else if (EspadaItem == true)
         {
             Espada.SetActive(true);
-            Bauculo.SetActive(false);
+            Gun.SetActive(false);
             BauculoItem = (false);
             if (Input.GetButtonDown("Fire1"))
             {
@@ -79,6 +81,14 @@ public class InputManager : MonoBehaviour
             EspadaItem = false;
             mirilla.SetActive(true);
          }
+
+        if (Input.GetButtonDown("Fire1") && BauculoItem == true && Time.time >= f_timetospawn)
+        {
+            f_timetospawn = Time.time + 1 / bauculospawn.effecttospawn.GetComponent<Bullet>().fireRate;
+            bauculospawn.SpawnVFX();
+
+        }
+
         //Salto
         //player.SetAxis(Input.GetAxis("Horizontal"));
 
