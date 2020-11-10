@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1344188100929735381}
   - component: {fileID: 1344188100929735382}
   - component: {fileID: 1344188100929735383}
+  - component: {fileID: 107101199}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -159,6 +160,20 @@ MonoBehaviour:
   m_groundLayer:
     serializedVersion: 2
     m_Bits: 0
+--- !u!136 &107101199
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344188100929735376}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1344188101613610524
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +192,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1344188101613610515
 Transform:
   m_ObjectHideFlags: 0
@@ -248,7 +263,7 @@ BoxCollider:
   m_GameObject: {fileID: 1344188101613610524}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -270,7 +285,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1344188101819515894
 Transform:
   m_ObjectHideFlags: 0
@@ -341,7 +356,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1344188101819515890}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
