@@ -12,7 +12,7 @@ public class InputManager : MonoBehaviour
    
     //HUD
     public GameObject hud;
-    public GameObject ingamemenu;
+    public GameObject pausemenu;
     public GameObject mirilla;
     public bool menuon;
     public GameMaster gamemaster;
@@ -29,8 +29,10 @@ public class InputManager : MonoBehaviour
     {
         Bauculo.SetActive(false);
         player = FindObjectOfType<PlayerController>();
+        
+        //Canvas
         menuon = false;
-        ingamemenu.SetActive(false);
+        pausemenu.SetActive(false);
 
         //Cursor
         Cursor.visible = (false);
@@ -87,11 +89,11 @@ public class InputManager : MonoBehaviour
         {
             if( menuon == false)
             {
-                ingamemenu.SetActive(true);
+                pausemenu.SetActive(true);
                 menuon = true;
             }else
             {
-                ingamemenu.SetActive(false);
+                pausemenu.SetActive(false);
                 menuon = false;
             }
         }

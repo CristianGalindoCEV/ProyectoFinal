@@ -5,10 +5,12 @@ using UnityEngine.UI;
 using UnityEngine.Audio;
 using TMPro;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
     public AudioMixer audioMixer;
+    public GameObject optionsmenu;
     public GameObject panelresolution;
     public GameObject panelsound;
     public GameObject panelgraphics;
@@ -21,6 +23,7 @@ public class MenuManager : MonoBehaviour
         panelgraphics.SetActive(false);
         panelresolution.SetActive(false);
         panelsound.SetActive(false);
+        optionsmenu.SetActive(false);
 
 
         resolutions = Screen.resolutions;
@@ -78,6 +81,24 @@ public class MenuManager : MonoBehaviour
         Screen.fullScreen = isFullscreen;
     }
 
+    //Menu pause buttons
+
+    public void PulsaResume()
+    {
+        inputmanager.pausemenu.SetActive(false);
+        inputmanager.menuon = false;
+    }
+
+    public void PulsaOptions()
+    {
+        optionsmenu.SetActive(false);
+        inputmanager.pausemenu.SetActive(false);
+    }
+
+    public void PulsaExit()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
     //Botones del menu Ingame
     public void PulsaResolution()
     {
