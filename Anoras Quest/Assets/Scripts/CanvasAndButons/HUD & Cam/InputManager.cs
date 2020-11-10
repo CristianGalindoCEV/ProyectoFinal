@@ -46,27 +46,7 @@ public class InputManager : MonoBehaviour
     void Update()
     {
         //Combate y armas
-        if (BauculoItem == true)
-        {
-            Espada.SetActive(false);
-            Gun.SetActive(true);
-            EspadaItem = (false);
-            if (Input.GetButtonDown("Fire1"))
-            {
-                //Bauculo.Fire();
-            }
-        }
-        
-        else if (EspadaItem == true)
-        {
-            Espada.SetActive(true);
-            Gun.SetActive(false);
-            BauculoItem = (false);
-            if (Input.GetButtonDown("Fire1"))
-            {
-                //Espada.Fire();
-            }
-        }
+
         
         if (Input.GetKey("1"))
         {
@@ -82,11 +62,9 @@ public class InputManager : MonoBehaviour
             mirilla.SetActive(true);
          }
 
-        if (Input.GetButtonDown("Fire1") && BauculoItem == true && Time.time >= f_timetospawn)
+        if (Input.GetButtonDown("Fire1") && BauculoItem == true)
         {
-            f_timetospawn = Time.time + 1 / bauculospawn.effecttospawn.GetComponent<Bullet>().fireRate;
             bauculospawn.SpawnVFX();
-
         }
 
         //Salto
@@ -125,8 +103,30 @@ public class InputManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = (false);
         }
-        
     }
 
+    public void ChangeWeapon()
+    {
+        if (BauculoItem == true)
+        {
+            Espada.SetActive(false);
+            Gun.SetActive(true);
+            EspadaItem = (false);
+            if (Input.GetButtonDown("Fire1"))
+            {
+                //Bauculo.Fire();
+            }
+        }
 
+        else if (EspadaItem == true)
+        {
+            Espada.SetActive(true);
+            Gun.SetActive(false);
+            BauculoItem = (false);
+            if (Input.GetButtonDown("Fire1"))
+            {
+                //Espada.Fire();
+            }
+        }
+    }
 }

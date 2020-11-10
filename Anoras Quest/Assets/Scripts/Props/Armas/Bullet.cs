@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed;
-    public float fireRate;
+    public float speed = 5;
 
     void Start()
     {
@@ -16,7 +15,7 @@ public class Bullet : MonoBehaviour
     {
      if (speed != 0)
         {
-            transform.position += transform.forward * (speed * Time.deltaTime);
+            transform.Translate(Vector3.forward * speed * Time.deltaTime);
         }
         else
         {

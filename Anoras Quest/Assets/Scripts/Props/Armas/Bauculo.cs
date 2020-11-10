@@ -5,16 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class Bauculo : MonoBehaviour
 {
-    public GameObject firepoint;
-    public List<GameObject> vfx = new List<GameObject>();
-    public Hand hand;
 
-    public GameObject effecttospawn;
+    public GameObject bullet;
+    public float speed;
+
 
    
     void Start()
     {
-        effecttospawn = vfx[0];
+
     }
 
     void Update()
@@ -24,20 +23,9 @@ public class Bauculo : MonoBehaviour
 
     public void SpawnVFX()
     {
-        GameObject vfx;
-
-        if (firepoint != null)
-        {
-            vfx = Instantiate(effecttospawn, firepoint.transform.position, Quaternion.identity);
-            if (hand != null)
-            {
-                vfx.transform.localRotation = hand.GetRotation();
-            }
-        }
-        else
-        {
-            Debug.Log("No FIre Point");
-        }
+        GameObject instBullet = Instantiate(bullet, transform.position, Quaternion.identity) as GameObject;
+        Rigidbody instbulletrigidbody = instBullet.GetComponent<Rigidbody>();
+        instbulletrigidbody.AddForce(Vector3.forward * speed);
     }
 
 }

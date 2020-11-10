@@ -170,6 +170,8 @@ public class PlayerController : PhysicsCollision
         gamemaster.hp = gamemaster.hp - damage;
         healthbar.SendMessage("TakeDamage", damage);
         //(Que el player sea empujado hacia atras)
+        m_rigidbody.AddForce(-transform.forward * 100f, ForceMode.Impulse);
+        m_rigidbody.AddForce(transform.up * 5f, ForceMode.Impulse);
 
         if (gamemaster.hp <= 0)
         {
